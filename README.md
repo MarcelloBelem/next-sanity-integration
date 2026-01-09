@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Next.js + Sanity (Embedded Studio)
 
-## Getting Started
+Este projeto foi desenvolvido com **objetivos educacionais**, com foco em aprofundar o domínio da integração entre **Next.js** e o **Sanity CMS**, utilizando o conceito de **Sanity Studio embarcado (Embedded Studio)**.
 
-First, run the development server:
+Ao invés de manter o CMS em uma aplicação separada, o **Sanity Studio é executado dentro da própria aplicação Next.js**, compartilhando o mesmo domínio do front-end. Essa abordagem simplifica o deploy, melhora a experiência de desenvolvimento e aproxima o fluxo de conteúdo da aplicação final.
+
+---
+
+## 🎯 Objetivos do Projeto
+
+- Compreender a arquitetura de um **Headless CMS** moderno.
+- Integrar o **Sanity Studio** diretamente no Next.js.
+- Utilizar boas práticas de configuração, organização de pastas e variáveis de ambiente.
+- Consumir conteúdo do Sanity de forma segura e performática.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **[Next.js](https://nextjs.org/)** — Framework React para aplicações web modernas e escaláveis.
+- **[Tailwind CSS](https://tailwindcss.com/)** — Framework utilitário para estilização rápida e consistente.
+- **[Sanity.io](https://www.sanity.io/)** — Headless CMS flexível e altamente customizável.
+
+---
+
+## 📋 Pré-requisitos
+
+Antes de iniciar o projeto, certifique-se de ter:
+
+- **Node.js** instalado (versão LTS recomendada)
+- Uma conta ativa no **Sanity.io**
+
+---
+
+## 🚀 Instalação e Configuração
+
+### 1️⃣ Clonar o repositório
+
+```bash
+git clone <link-do-seu-repositorio>
+cd nome-do-projeto
+```
+
+### 2️⃣ Instalar as dependências
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+---
+
+## ⚙️ Configuração das Variáveis de Ambiente
+
+Para que a aplicação consiga se comunicar corretamente com o Sanity, é necessário configurar as variáveis de ambiente.
+
+### Passo a passo:
+
+1. Crie um projeto no painel do Sanity:
+   - [https://www.sanity.io/manage](https://www.sanity.io/manage)
+
+2. No projeto, localize o **Project ID** e o **Dataset**.
+
+3. Renomeie o arquivo:
+
+```bash
+example.env.local → .env.local
+```
+
+4. Preencha o arquivo `.env.local`:
+
+```bash
+# ID do projeto no Sanity
+NEXT_PUBLIC_SANITY_PROJECT_ID="seu_project_id_aqui"
+
+# Nome do dataset (geralmente "production")
+NEXT_PUBLIC_SANITY_DATASET="production"
+```
+
+> ⚠️ **Importante:** Nunca versionar o arquivo `.env.local`.
+
+---
+
+## ▶️ Executando o Projeto
+
+Com tudo configurado, inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse no navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🎛️ Acessando o Sanity Studio
 
-To learn more about Next.js, take a look at the following resources:
+O **Sanity Studio** está integrado à aplicação Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Para acessar:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Com o projeto rodando, abra:
 
-## Deploy on Vercel
+```
+http://localhost:3000/studio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Primeiro acesso (Erro de CORS)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No primeiro acesso local, o Sanity pode bloquear a conexão por questões de segurança.
+
+Caso isso aconteça:
+
+1. Um aviso será exibido na tela.
+2. Clique em **"Add Development Host"** ou **"Add CORS Origin"**.
+3. Autorize o domínio `http://localhost:3000`.
+4. Faça login com sua conta do Sanity.
+
+Após isso, o Studio estará totalmente funcional.
+
+---
+
+## 📌 Observações Finais
+
+Este projeto serve como base para estudos e pode ser facilmente expandido para:
+
+- Blogs
+- Portfólios
+- Sites institucionais
+- Dashboards administrativos
+
+---
+
+### 👨‍💻 Autor
+
+Desenvolvido por **Dev.Belém**
+Estudos em **Next.js + Sanity CMS**
+
+🚀
